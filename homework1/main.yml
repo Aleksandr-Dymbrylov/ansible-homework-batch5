@@ -1,0 +1,21 @@
+- name: Install and configure MariaDB
+  hosts: all
+  become: yes
+
+  tasks:
+    - name: Install required packages
+      apt:
+        name:
+          - unzip
+          - mariadb-server
+          - mariadb-client
+        state: present
+
+    - name: Start and enable MariaDB service
+      service:
+        name: mariadb
+        state: started
+        enabled: yes
+
+
+     
