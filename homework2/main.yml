@@ -1,0 +1,47 @@
+- name: User and Group Management
+  hosts: all
+  become: yes
+  tasks:
+    - name: Create user alex
+      user:
+        name: "alex"
+        state: present
+
+    - name: Create user tim
+      user:
+        name: "tim"
+        state: present
+
+    - name: Create user ann
+      user:
+        name: "ann"
+        state: present
+
+    - name: Create group devops
+      group:
+        name: "devops"
+        state: present
+
+    - name: Create group qa
+      group:
+        name: "qa"
+        state: present
+
+    - name: Add alex to devops group
+      user:
+        name: "alex"
+        groups: "devops"
+        append: yes
+
+    - name: Add tim to qa group
+      user:
+        name: "tim"
+        groups: "qa"
+        append: yes
+
+    - name: Add ann to qa group
+      user:
+        name: "ann"
+        groups: "qa"
+        append: yes
+
