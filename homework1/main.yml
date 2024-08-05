@@ -2,6 +2,10 @@
   hosts: all
   become: yes
 
+    - name: Update apt package
+    apt:
+      update_cache: yes
+      
   tasks:
     - name: Install required packages
       apt:
