@@ -1,12 +1,12 @@
 - name: Install and configure MariaDB
   hosts: all
   become: yes
-
-    - name: Update apt package
-      apt:
-        update_cache: yes
       
   tasks:
+    - name: Update apt package
+      apt:
+        update_cache: yes  
+        
     - name: Install required packages
       apt:
         name:
