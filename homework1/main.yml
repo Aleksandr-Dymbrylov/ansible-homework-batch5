@@ -3,8 +3,8 @@
   become: yes
 
     - name: Update apt package
-    apt:
-      update_cache: yes
+      apt:
+        update_cache: yes
       
   tasks:
     - name: Install required packages
